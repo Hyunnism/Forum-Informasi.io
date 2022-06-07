@@ -1,0 +1,168 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: 'Quicksand', sans-serif;
+}
+
+body{
+	height: 100vh;
+	width: 100%;
+    background: url(../img/aesthetic.jpg);
+    background-size: 200%;
+}
+
+.navbar {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: white;
+}
+
+.brand-title {
+    font-size: 1.5rem;
+    margin: .5rem;
+}
+
+.navbar-links {
+    height: 100%;
+}
+
+.navbar-links ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-links li {
+    list-style: none;
+}
+
+.navbar-links li a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    padding: 1rem;
+}
+
+.navbar-links li:hover {
+    background-color: #555;
+}
+
+.toggle-button {
+    position: absolute;
+    top: .75rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+}
+
+.toggle-button .bar {
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY();
+    width: 100%;
+    text-align: center;
+}
+
+.tombol {
+    display: inline-block;
+    width: 90px;
+    height: 90px;
+    background: #f1f1f1f1;
+    margin: 10px;
+    border-radius: 30%;
+    box-sizing: 0 50px 15px -5px #00000070;
+    overflow: hidden;
+    position: relative;
+    color: rgb(190, 227, 7);
+}
+
+.tombol i {
+    transition: 0.2s linear;
+    font-size: 26px;
+    line-height: 90px;
+}
+
+.tombol:hover i {
+    transform: scale(1.3);
+    color: #f1f1f1;
+}
+
+.tombol::before {
+    content: "";
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    left: -110%;
+    top: 90%;
+    transform: rotate(45deg);
+    background: #3498db;
+}
+
+.tombol:hover::before {
+    left: -10%;
+    top: -10%;
+    animation: aaa 0.7s 1;
+}
+
+@keyframes aaa {
+    0%{
+        left: -110%;
+        top: -30%;
+    }
+    50%{
+        left: -10%;
+        top: -30%;
+    }
+    100%{
+        left: -10%;
+        top: -10%;
+    }
+}
+
+
+@media (max-width: 800px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .toggle-button {
+        display: flex;
+    }
+
+    .navbar-links {
+        display: none;
+        width: 100%;
+    }
+
+    .navbar-links ul {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .navbar-links ul li {
+        text-align: center;
+    }
+
+    .navbar-links ul li a {
+        padding: .5rem 1rem;
+    }
+
+    .navbar-links.active {
+        display: flex;
+    }    
+}
